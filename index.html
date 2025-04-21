@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профессиональный видеомонтаж - Alya Edit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #000;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #ff7e5f;
+        }
+        
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #ff7e5f;
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #f45c43;
+            transform: translateY(-3px);
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.2rem;
+            color: #2a5298;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .service-card h3 {
+            margin-bottom: 1rem;
+            color: #2a5298;
+        }
+        
+        .service-card .price {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #ff7e5f;
+            margin: 1rem 0;
+        }
+        
+        .portfolio {
+            background: #eef2f7;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+        }
+        
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(42, 82, 152, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+        }
+        
+        footer {
+            background: #2a5298;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 1rem;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #ff7e5f;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Фиксированная навигация -->
+    <nav class="fixed-nav">
+        <div class="container">
+            <div class="logo">Alya Edit</div>
+            <ul class="nav-links">
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#portfolio">Портфолио</a></li>
+                <li><a href="#order">Заказать</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+<!-- Весь остальной контент оборачиваем в div -->
+    <div class="content-wrapper">
+        <header>
+            <div class="container">
+                <div class="hero">
+                    <h1>Профессиональный видеомонтаж</h1>
+                    <p>Создаем впечатляющие видео для бизнеса, мероприятий и личного пользования.</p>
+                    <a href="#order" class="btn">Заказать монтаж</a>
+                </div>
+            </div>
+        </header>
+    
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Наши услуги</h2>
+            <div class="services">
+                <div class="service-card">
+                    <h3>Базовый монтаж</h3>
+                    <p>Обрезка и склейка видео, добавление простых переходов, базовая цветокоррекция, простое наложение текста.</p>
+                    <div class="price">от 2000 руб.</div>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Продвинутый монтаж</h3>
+                    <p>Профессиональный монтаж с эффектами, анимацией текста, сложными переходами, цветокоррекцией и звуковым оформлением.</p>
+                    <div class="price">от 5000 руб.</div>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Полный пакет</h3>
+                    <p>Полный цикл производства: сценарий, съемка (по согласованию), монтаж, спецэффекты, озвучка, цветокоррекция.</p>
+                    <div class="price">от 15000 руб.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Наши работы</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://i.imgur.com/QG5sAjO.gif?text=Корпоративное+видео" alt="Корпоративное видео">
+                    <div class="portfolio-overlay">
+                        <h3>Корпоративное видео</h3>
+                        <p>Видеопрезентация для компании "Dwight Technologies"</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://i.imgur.com/6DPpGL2.gif?text=Свадебное+видео" alt="Свадебное видео">
+                    <div class="portfolio-overlay">
+                        <h3>Свадебное видео</h3>
+                        <p>Монтаж свадебной церемонии с эффектами и цветокоррекцией</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://i.imgur.com/FQh3fAD.gif?text=Рекламный+ролик" alt="Рекламный ролик">
+                    <div class="portfolio-overlay">
+                        <h3>Рекламный ролик</h3>
+                        <p>30-секундный рекламный ролик для кафе "У Шона"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="order">
+        <div class="container">
+            <h2 class="section-title">Заказать видеомонтаж</h2>
+            <div class="contact-form">
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Тип услуги</label>
+<select id="service" name="service" required>
+                            <option value="">Выберите услугу</option>
+                            <option value="basic">Базовый монтаж</option>
+                            <option value="advanced">Продвинутый монтаж</option>
+                            <option value="full">Полный пакет</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="details">Подробности заказа</label>
+                        <textarea id="details" name="details" placeholder="Опишите ваш проект, укажите желаемые сроки и особые пожелания..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contacts">
+        <div class="container">
+            <h2 class="section-title">Контакты</h2>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <p>Email: info@alyaedit.ru</p>
+                <p>Телефон: +7 (800) 555-35-35</p>
+                <p>Адрес: г. Ростов-На-Дону, пл. Гагарина, д. 1</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-vk"><img src="https://www.svgrepo.com/show/93361/vk.svg" width="50" height="50"</i></a>
+                <a href="#"><i class="fab fa-telegram"><img src="https://www.svgrepo.com/show/11380/telegram-logo.svg" width="50" height="50"</i></a>
+                <a href="#"><i class="fab fa-youtube"><img src="https://www.svgrepo.com/show/363213/youtube-logo-bold.svg" width="50" height="50"</i></a>
+            </div>
+            <p>&copy; 2025 Alya Edit. Все права защищены.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Обработка формы заказа
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Собираем данные формы
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                service: document.getElementById('service').value,
+                details: document.getElementById('details').value
+            };
+            
+            // Здесь можно добавить отправку данных на сервер
+            // Например, с помощью fetch или AJAX
+            
+            // В данном примере просто показываем сообщение
+            alert('Спасибо за заявку, ' + formData.name + '! Мы свяжемся с вами в ближайшее время для уточнения деталей.');
+            
+            // Очищаем форму
+            this.reset();
+        });
+        
+        // Плавная прокрутка для навигации
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Анимация при прокрутке
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            
+            // Пример: изменение прозрачности хедера при прокрутке
+            const header = document.querySelector('header');
+            if (scrollPosition > 100) {
+                header.style.opacity = '0.9';
+            } else {
+                header.style.opacity = '1';
+            }
+        });
+    </script>
+</body>
+</html>
