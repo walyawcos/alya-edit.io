@@ -2,4 +2,4 @@
 
 Верстка сайта агенства по профессиональному видеомонтажу "Alya Edit". Клиент на главной странице сайта может ознакомиться с разделами о предоставляемых услугах, портфолио предыдущих работы, оформить заказ, а также получить контактные данные, нажав на соответствующий раздел в верхнем меню страницы.
 
-Оригинальная ссылка на CodePen: [https://codepen.io/uuqtefcj-the-solid/pen/emmpaVX](https://codepen.io/uuqtefcj-the-solid/pen/emmpaVX).
+Оригинальная ссылка на проект в CodePen: [https://codepen.io/uuqtefcj-the-solid/pen/emmpaVX](https://codepen.io/uuqtefcj-the-solid/pen/emmpaVX).
